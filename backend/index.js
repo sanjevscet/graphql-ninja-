@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import { graphqlHTTP } from "express-graphql";
 
 import "dotenv/config";
@@ -9,6 +10,7 @@ import { mongoSchema } from "./schema/mongoSchema.js";
 const port = process.env.PORT || 3000;
 
 const app = express();
+app.use(cors());
 
 connectDB();
 
